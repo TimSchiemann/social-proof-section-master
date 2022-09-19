@@ -1,0 +1,59 @@
+@use "../sass-utils" as u;
+
+body {
+  @include u.font-main(400);
+  background-image: url("../../images/bg-pattern-top-mobile.svg"),
+    url("../../images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top right, bottom left;
+  padding: 2em;
+
+  @include u.breakpoint(desktop){
+    padding: 0;
+    background-image: url('../../images/bg-pattern-top-desktop.svg'), url('../../images/bg-pattern-bottom-desktop.svg');
+    background-position: top left, bottom right;
+  }
+
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  @include u.breakpoint(desktop) {
+    font-size: 1.5rem;
+    height: 90vh;
+    margin: 5vh 8vw;
+    display: grid;
+    grid-template-areas:
+      "one two"
+      "three three";
+  }
+}
+
+.about {
+  color: u.$magenta-vdark;
+  text-align: center;
+  margin: 2em 0;
+  h1 {
+    @include u.font-main(900);
+    font-size: 3rem;
+    margin: 1em 0 0.5em 0;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+
+  @include u.breakpoint(desktop) {
+    text-align: left;
+    h1 {
+        width: 65%;
+        font-size: 4rem;
+    }
+    p {
+        width: 85%;
+        line-height: 1.75em;
+    }
+  }
+}

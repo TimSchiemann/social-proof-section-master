@@ -1,0 +1,4 @@
+@mixin font-main($weight){
+    font-family: 'League Spartan', sans-serif;
+    font-weight: $weight;
+}

@@ -1,0 +1,33 @@
+@use "../sass-utils" as u;
+
+.ratings {
+  @extend %container-flex-col;
+
+  @include u.breakpoint(desktop) {
+    grid-area: two;
+    align-items: flex-end;
+    justify-content: center
+  }
+  .rating {
+    @extend .ratings;
+    flex-direction: column;
+    align-items: center;
+    background: u.$magenta-light;
+    padding: 1em;
+    border-radius: 10px;
+    h3 {
+      color: u.$magenta-vdark;
+      @include u.font-main(700);
+    }
+    @include u.breakpoint(desktop) {
+      width: 23em;
+      flex-direction: row;
+      &:nth-child(1) {
+        margin-right: 10em;
+      }
+      &:nth-child(2) {
+        margin-right: 5em;
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use "../sass-utils" as u;
+
+.reviews {
+  @extend %container-flex-col;
+  .review {
+    border-radius: 10px;
+    background: u.$magenta-vdark;
+    color: u.$magenta-light;
+    padding: 2em;
+    width: 100%;
+
+    span {
+      color: u.$pink;
+    }
+
+    div {
+      display: flex;
+      gap: 0.3em;
+    }
+    &__name {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    img {
+      border-radius: 50%;
+      height: 3.5em;
+      margin-right: 1em;
+    }
+    p {
+      margin-top: 2em;
+      line-height: 1.2em;
+    }
+  }
+  @include u.breakpoint(desktop) {
+    grid-area: three;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    .review {
+      min-width: 400px;
+      &:nth-child(2){
+        margin-top: 2.5em;
+      }
+      &:nth-child(3){
+        margin-top: 5em;
+      }
+    }
+  }
+}
